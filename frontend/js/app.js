@@ -56,6 +56,10 @@ var app = {
             });
 
         }
+    },
+
+    init: function() {
+        $.session.set('session', null);
     }
 
 };

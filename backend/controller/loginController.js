@@ -16,12 +16,12 @@ exports.login = function(req, res) {
     var _senha =   req.body.senha || '';
 
     if(_login == 'admin' && '_senha' == 'admin') {
-        result.data = 'Valid login';
+        result.status = constants.http.ok;
+        result.data = {user:_login, name:'Administrator'};
     } else {
+        result.status = constants.http.noContent;
         result.data = 'Invalid login';
     }
-
-    result.status = constants.http.ok;
 
     res.end(JSON.stringify(result));
 
